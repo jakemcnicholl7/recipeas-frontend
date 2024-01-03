@@ -1,5 +1,6 @@
 import React from "react"
 import logo from "../logo.svg"
+import {Link} from "react-router-dom"
 
 const Home = () => {
     return (
@@ -7,7 +8,9 @@ const Home = () => {
             <header className="App-header">
                 <h2 className="heading">Recipeas</h2>
                 <img src={logo} className="App-logo" alt="logo" />
-                <button className="recipe-button">Suggest Random Recipe</button>
+                <Link to="/recipe">
+                    <button className="recipe-button">Suggest Random Recipe</button>
+                </Link>
             </header>
         </div>
     )
