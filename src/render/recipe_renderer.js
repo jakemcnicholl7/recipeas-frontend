@@ -2,8 +2,6 @@ import RecipeContentType from "../enums/recipe_content_type"
 
 export default class RecipeRenderer {
     static renderRecipe(recipe) {
-        console.log(recipe)
-
         const REQUIRED_RECIPE_FIELDS = ["title", "ingredients", "method"];
 
         for (let field of REQUIRED_RECIPE_FIELDS) {
@@ -27,11 +25,13 @@ export default class RecipeRenderer {
     }
 
     static renderIngredients(ingredients) {
-        return document.createTextNode(ingredients);
+        const ingredientsArray = UtilsRenderer.stringToArray(ingredients);
+        return UtilsRenderer.renderList(ingredientsArray);
     }
 
     static renderMethod(method) {
-        return document.createTextNode(method);
+        const methodArray = UtilsRenderer.stringToArray(method);
+        return UtilsRenderer.renderList(methodArray);
     }
 
     static renderContent(content) {
