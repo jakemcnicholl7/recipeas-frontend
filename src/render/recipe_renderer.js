@@ -1,4 +1,5 @@
 import RecipeContentType from "../enums/recipe_content_type"
+import UtilsRenderer from "./utils_renderer";
 
 export default class RecipeRenderer {
     static renderRecipe(recipe) {
