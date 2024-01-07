@@ -14,7 +14,12 @@ export default class UtilsRenderer {
     }
 
     static renderList(array) {
-        let list = document.createElement("ol");
+        let list = document.createElement("ul");
+        return UtilsRenderer.renderList(array, list);
+    }
+
+    static renderList(array, list) {
+        list.innerHTML = '';
         for (let element of array) {
             let item = document.createElement("li");
             item.textContent = element;

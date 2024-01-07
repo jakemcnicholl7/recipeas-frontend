@@ -1,5 +1,4 @@
 import RecipeType from "../enums/recipe_type"
-console.log(RecipeType)
 
 export default class RecipeRetriever {
     static RECIPE_ENDPOINT = "http://localhost:5000"

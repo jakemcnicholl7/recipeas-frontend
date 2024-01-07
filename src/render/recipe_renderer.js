@@ -2,13 +2,15 @@ import RecipeContentType from "../enums/recipe_content_type"
 import UtilsRenderer from "./utils_renderer";
 
 export default class RecipeRenderer {
+    static CONTENT_IDENTIFIER = "-variable-content"
+
     static renderRecipe(recipe) {
         const REQUIRED_RECIPE_FIELDS = ["title", "ingredients", "method"];
 
         for (let field of REQUIRED_RECIPE_FIELDS) {
             let fieldParagraphDiv = document.createElement("p");
             fieldParagraphDiv.appendChild(RecipeRenderer.renderRecipeContent(field, recipe[field]));
-            let fieldDiv = field + "-content"
+            let fieldDiv = field + RecipeRenderer.CONTENT_IDENTIFIER;
             let recipeFieldDiv = document.getElementsByClassName(fieldDiv)[0];
             recipeFieldDiv.replaceChildren(fieldParagraphDiv)
         }
@@ -27,12 +29,14 @@ export default class RecipeRenderer {
 
     static renderIngredients(ingredients) {
         const ingredientsArray = UtilsRenderer.stringToArray(ingredients);
-        return UtilsRenderer.renderList(ingredientsArray);
+        let ingredientsList = document.getElementsByClassName(RecipeContentType.INGREDIENTS + "-list")[0];
+        return UtilsRenderer.renderList(ingredientsArray, ingredientsList);
     }
 
     static renderMethod(method) {
         const methodArray = UtilsRenderer.stringToArray(method);
-        return UtilsRenderer.renderList(methodArray);
+        let methodList = document.getElementsByClassName(RecipeContentType.METHOD + "-list")[0];
+        return UtilsRenderer.renderList(methodArray, methodList);
     }
 
     static renderContent(content) {
