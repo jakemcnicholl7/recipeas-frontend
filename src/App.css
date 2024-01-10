@@ -8,19 +8,9 @@ body {
 }
 
 .recipe-button {
-  color: #000;
-}
-
-.recipe-button {
     border: none;
     border-radius: 150px;
-    padding: 3px 8px;
-    background-color: #B0B0B0;
-    color: white;
-}
-
-.recipe-button:hover {
-    background-color: #ff5c5c;
+    margin: 30px;
     color: white;
 }
 

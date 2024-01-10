@@ -22,6 +22,8 @@ export default class RecipeRenderer {
                 return RecipeRenderer.renderIngredients(content);
             case RecipeContentType.METHOD:
                 return RecipeRenderer.renderMethod(content);
+            case RecipeContentType.TITLE:
+                return RecipeRenderer.renderTitle(content);
             default:
                 return RecipeRenderer.renderContent(content);
         }
@@ -37,6 +39,18 @@ export default class RecipeRenderer {
         const methodArray = UtilsRenderer.stringToArray(method);
         let methodList = document.getElementsByClassName(RecipeContentType.METHOD + "-list")[0];
         return UtilsRenderer.renderList(methodArray, methodList);
+    }
+    
+    static renderTitle(content) {
+        content = RecipeRenderer.capitalizeAll(content.replace(" and " , " & "));
+        return document.createTextNode(content);
+    }
+
+    static capitalizeFirstLetter(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+    static capitalizeAll(str) {
+        return str.toUpperCase();
     }
 
     static renderContent(content) {

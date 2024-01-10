@@ -4,6 +4,8 @@ import RecipeType from "../enums/recipe_type"
 import RecipeRenderer from "../render/recipe_renderer"
 import "../css/recipe.css"
 
+import Button from 'react-bootstrap/Button'; 
+
 const Recipe = () => {
     useEffect(() => {
         generateAndRenderRecipe(RecipeType.RANDOM);
@@ -14,22 +16,24 @@ const Recipe = () => {
         RecipeRenderer.renderRecipe(recipe)
     }
 
+
     return (
         <div className="App">
-            <button className="recipe-button" onClick={() => generateAndRenderRecipe(RecipeType.RANDOM)}>Suggest Another Random Recipe</button>
+            <Button variant="primary" onClick={() => generateAndRenderRecipe(RecipeType.RANDOM)} className="recipe-button"> 
+                Another Random Recipe
+            </Button> 
             <div className="recipe-content">
                 <div className="title-content">
-                    <div className="title-variable-content">
-                    </div>
+                    <h2 class="title-variable-content recipe-title display-5"></h2>
                 </div>
                 <div className="ingredients-content">
-                    <h2>Ingredients</h2>
+                    <h2 class="section display-6">INGREDIENTS</h2>
                     <div className="ingredients-variable-content">
                         <ul className="ingredients-list"></ul>
                     </div>
                 </div>
                 <div className="method-content">
-                    <h2>Method</h2>
+                    <h2 className="section display-6">METHOD</h2>
                     <div className="method-variable-content">
                         <ol className="method-list"></ol>
                     </div>

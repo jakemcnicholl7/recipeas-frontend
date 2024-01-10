@@ -1,8 +1,24 @@
+.title-content {
+  padding : 50px 0px 30px 0px;
+  max-width: 600px;
+  text-align: center;
+  margin: auto;
+}
+
+.recipe-title {
+  color: #E0B0FF;
+}
+
+.recipe-content {
+  width: 75%;
+  margin: auto;
+  border: solid 10px #ededed;;
+  border-radius: 30px;
+}
 
 div.ingredients-content {
   width: 50%;
   margin: auto;
-  background-color:  #f0f0f0;
   padding: 0px;
   border-radius: 5px;
   box-sizing: border-box;
@@ -12,8 +28,7 @@ div.ingredients-content {
 div.method-content {
   width: 75%;
   margin: auto;
-  background-color: #f0f0f0;
-  padding: 0px;
+  padding: 0px 0px 20px 0px;
   border-radius: 5px;
   box-sizing: border-box;
   text-align: center;
